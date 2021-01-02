@@ -87,6 +87,11 @@ func (qf *QuestionFetch) parse(respBody io.ReadCloser) error {
 					"id":32373308
 				},
 		*/
+		//skip non question
+		OldQuestionID := questionBody.Get("id").MustInt()
+		if OldQuestionID == 0 {
+			continue
+		}
 		questionItem := storage.Question{
 			OldQuestionID: questionBody.Get("id").MustInt(),
 			TopicID:       qf.TopicID,
