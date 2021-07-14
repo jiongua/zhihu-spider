@@ -1,2 +1,2 @@
 # zhihu-spider
-使用golang colly框架爬取知乎
+使用golang爬取知乎
